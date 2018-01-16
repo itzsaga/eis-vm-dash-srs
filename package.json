@@ -1,9 +1,9 @@
 {
-  "name": "simple-react-starter",
+  "name": "eis vm dash",
   "version": "1.0.0",
   "description": "web application make decisions",
   "main": "null",
-  "author": "Kyle Welch <kwelch0626@gmail.com>",
+  "author": "Seth Alexander <salexander@equinoxis.com>",
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server",
@@ -13,8 +13,10 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "firebase": "^4.8.2",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "reactfire": "^1.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
@@ -28,6 +30,7 @@
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-2": "^6.22.0",
     "cross-env": "^5.0.0",
+    "dotenv-webpack": "^1.5.4",
     "eslint": "^4.3.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-babel": "^4.1.1",
