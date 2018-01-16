@@ -3,6 +3,8 @@ import firebase from './firebase';
 
 import Vm from './Vm';
 
+import 'bulma/bulma.sass';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -75,7 +77,7 @@ class App extends Component {
     const vmList = this.state.vms !== [] ? <Vm vms={this.state.vms} removeVm={this.removeVm} /> : <h1>There are no VMs in use right now!</h1>;
     return (
       <div>
-        <p>Use the following as an example for formatting purposes:</p>
+        <h1>Use the following as an example for formatting purposes:</h1>
         <p>VPN1A - WIN7 - Seth - Xchange TeleLink.Net</p>
         <form onSubmit={this.handleSubmit}>
           <input type="text" name="vm" placeholder="Which VM is this?" onChange={this.handleChange} value={this.state.vm} />
