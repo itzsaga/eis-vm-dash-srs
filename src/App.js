@@ -66,8 +66,13 @@ class App extends Component {
     })
   }
 
+  removeVm(vmId) {
+    const vmRef = firebase.database().ref(`/vms/${vmId}`);
+    vmRef.remove();
+  }
+
   render() {
-    const vmList = this.state.vms !== [] ? <Vm vms={this.state.vms} /> : <h1>There are no VMs in use right now!</h1>;
+    const vmList = this.state.vms !== [] ? <Vm vms={this.state.vms} removeVm={this.removeVm} /> : <h1>There are no VMs in use right now!</h1>;
     return (
       <div>
         <p>Use the following as an example for formatting purposes:</p>
