@@ -17,6 +17,25 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    const vmsRef = firebase.database().ref('vms');
+    vmsRef.on('value', (snapshot) => {
+      let vms = snapshot.val();
+      let newState = [];
+      for (let vm in vms) {
+        newState.push({
+          id: vm,
+          os: vms[vm].os,
+          user: vms[vm].user,
+          client: vms[vm].client
+        });
+      }
+      this.setState({
+        vms: newState
+      });
+    });
+  }
+
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value
