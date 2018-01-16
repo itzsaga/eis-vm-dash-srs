@@ -74,74 +74,74 @@ class App extends Component {
   }
 
   render() {
-    const vmList = this.state.vms !== [] ? <Vm vms={this.state.vms} removeVm={this.removeVm} /> : <h1>There are no VMs in use right now!</h1>;
+    let vmList = this.state.vms !== [] ? <Vm vms={this.state.vms} removeVm={this.removeVm} /> : <h1>There are no VMs in use right now!</h1>;
     return (
       <div className="container">
+      <br />
         <div className="title">Equinox VPN VM Usage Dashboard</div>
-          <div className="field is-horizontal">
-            <div className="field">
-              <div className="control">
-                <div className="select">
-                  <select onChange={this.handleChange} name="vm" value={this.state.vm}>
-                    <option>Pick a VM</option>
-                    <option>VPN1A</option>
-                    <option>VPN1B</option>
-                    <option>VPN1C</option>
-                    <option>VPN2A</option>
-                    <option>VPN2B</option>
-                    <option>VPN2C</option>
-                    <option>VPN3A</option>
-                    <option>VPN3B</option>
-                    <option>VPN3C</option>
-                    <option>VPN3D</option>
-                    <option>VPN3E</option>
-                    <option>VPN3F</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div className="field">
-              <div className="control">
-                <div className="select">
-                  <select onChange={this.handleChange} name="os" value={this.state.os}>
-                    <option>Pick the OS</option>
-                    <option>WINXP</option>
-                    <option>WIN7</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div className="field">
-              <div className="control">
-                <div className="select">
-                  <select onChange={this.handleChange} name="user" value={this.state.user}>
-                    <option>Who are you?</option>
-                    <option>Chris</option>
-                    <option>Eric</option>
-                    <option>Ernest</option>
-                    <option>Joe</option>
-                    <option>Kevin</option>
-                    <option>Mitch</option>
-                    <option>Renee</option>
-                    <option>Seth</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div className="field">
-              <div className="control">
-                <input className="input" type="text" name="client" placeholder="What client are you connecting to?" onChange={this.handleChange} value={this.state.client} />
-              </div>
-            </div>
-            <div className="field">
-              <div className="control">
-                <button onClick={this.handleSubmit} className="button is-success">Add VM</button>
+        <div className="field is-horizontal">
+          <div className="field">
+            <div className="control">
+              <div className="select">
+                <select onChange={this.handleChange} name="vm" value={this.state.vm}>
+                  <option>Pick a VM</option>
+                  <option>VPN1A</option>
+                  <option>VPN1B</option>
+                  <option>VPN1C</option>
+                  <option>VPN2A</option>
+                  <option>VPN2B</option>
+                  <option>VPN2C</option>
+                  <option>VPN3A</option>
+                  <option>VPN3B</option>
+                  <option>VPN3C</option>
+                  <option>VPN3D</option>
+                  <option>VPN3E</option>
+                  <option>VPN3F</option>
+                </select>
               </div>
             </div>
           </div>
+          <div className="field">
+            <div className="control">
+              <div className="select">
+                <select onChange={this.handleChange} name="os" value={this.state.os}>
+                  <option>Pick the OS</option>
+                  <option>WINXP</option>
+                  <option>WIN7</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div className="field">
+            <div className="control">
+              <div className="select">
+                <select onChange={this.handleChange} name="user" value={this.state.user}>
+                  <option>Who are you?</option>
+                  <option>Chris</option>
+                  <option>Eric</option>
+                  <option>Ernest</option>
+                  <option>Joe</option>
+                  <option>Kevin</option>
+                  <option>Mitch</option>
+                  <option>Renee</option>
+                  <option>Seth</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div className="field">
+            <div className="control">
+              <input className="input" type="text" name="client" placeholder="What client are you connecting to?" onChange={this.handleChange} value={this.state.client} />
+            </div>
+          </div>
+          <div className="field">
+            <div className="control">
+              <button onClick={this.handleSubmit} className="button is-success">Add VM</button>
+            </div>
+          </div>
         </div>
-        {vmList}
-      </div>
+      {vmList}
+    </div>
     );
   }
 }
