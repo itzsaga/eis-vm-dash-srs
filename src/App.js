@@ -25,6 +25,7 @@ class App extends Component {
       for (let vm in vms) {
         newState.push({
           id: vm,
+          vm: vms[vm].vm,
           os: vms[vm].os,
           user: vms[vm].user,
           client: vms[vm].client
@@ -61,8 +62,11 @@ class App extends Component {
   }
 
   render() {
+    const vmList = this.state.vms !== [] ? <Vm vms={this.state.vms} /> : <h1>There are no VMs in use right now!</h1>;
     return (
       <div>
+        <p>Use the following as an example for formatting purposes:</p>
+        <p>VPN1A - WIN7 - Seth - Xchange TeleLink.Net</p>
         <form onSubmit={this.handleSubmit}>
           <input type="text" name="vm" placeholder="Which VM is this?" onChange={this.handleChange} value={this.state.vm} />
           <input type="text" name="os" placeholder="What OS is this VM?" onChange={this.handleChange} value={this.state.os} />
@@ -70,7 +74,7 @@ class App extends Component {
           <input type="text" name="client" placeholder="What client are you connecting to?" onChange={this.handleChange} value={this.state.client} />
           <button>Add VM</button>
         </form>
-        <Vm />
+        {vmList}
       </div>
     );
   }

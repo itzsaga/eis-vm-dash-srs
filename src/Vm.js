@@ -1,11 +1,15 @@
 import React from 'react';
 
-const Vm = ({ os, user, client }) => {
-  return(
-    <div>
-      <h1>I'm a Machine!</h1>
-    </div>
-  )
-}
+const Vm = ({ vms }) => (
+  <ul>
+    {vms.map((vm) => {
+      return(
+        <li key={vm.id}>
+          <h3>{vm.vm} - {vm.os} - {vm.user} - {vm.client}</h3>
+        </li>
+      )
+    })}
+  </ul>
+);
 
 export default Vm;
