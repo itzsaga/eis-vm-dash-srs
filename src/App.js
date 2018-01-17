@@ -78,7 +78,7 @@ class App extends Component {
     return (
       <div className="container">
       <br />
-        <div className="title">Equinox VPN VM Usage Dashboard</div>
+        <div className="title is-2">Equinox VPN VM Usage Dashboard</div>
         <div className="field is-horizontal">
           <div className="field">
             <div className="control">
@@ -131,7 +131,7 @@ class App extends Component {
           </div>
           <div className="field">
             <div className="control">
-              <input className="input" type="text" name="client" placeholder="What client are you connecting to?" onChange={this.handleChange} value={this.state.client} />
+              <input className="input" type="text" name="client" placeholder="Who are you connecting to?" onChange={this.handleChange} value={this.state.client} />
             </div>
           </div>
           <div className="field">
@@ -141,7 +141,7 @@ class App extends Component {
           </div>
         </div>
       {vmList}
-    </div>
+      </div>
     );
   }
 }
