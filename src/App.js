@@ -27,7 +27,6 @@ class App extends Component {
         newState.push({
           id: vm,
           vm: vms[vm].vm,
-          os: vms[vm].os,
           user: vms[vm].user,
           client: vms[vm].client
         });
@@ -70,7 +69,6 @@ class App extends Component {
   }
 
   render() {
-    let vmList = this.state.vms !== [] ? <Vm vms={this.state.vms} removeVm={this.removeVm} /> : <h1>There are no VMs in use right now!</h1>;
     return (
       <div className="container">
       <br />
@@ -125,7 +123,7 @@ class App extends Component {
             </div>
           </div>
         </div>
-      {vmList}
+      <Vm vms={this.state.vms} removeVm={this.removeVm} />
       </div>
     );
   }
