@@ -7,7 +7,7 @@ const Vm = ({ vms, removeVm }) => (
         {vms.map((vm) => {
           return(
             <li className="title" key={vm.id}>
-              <p className="title">{vm.vm} - {vm.os} - {vm.user} - {vm.client} <button className="button is-danger" onClick={() => removeVm(vm.id)}>Remove</button></p>
+              <p className="title">{vm.vm} - {vm.user} - {vm.client} <button className="button is-danger" onClick={() => removeVm(vm.id)}>Remove</button></p>
             </li>
           )
         })}

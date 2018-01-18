@@ -10,7 +10,6 @@ class App extends Component {
     super(props);
     this.state = {
       vm: '',
-      os: '',
       user: '',
       client: '',
       vms: []
@@ -55,15 +54,12 @@ class App extends Component {
     const vmsRef = firebase.database().ref('vms');
     const vm = {
       vm: this.state.vm,
-      os: this.state.os,
       user: this.state.user,
       client: this.state.client
     }
     vmsRef.push(vm);
     this.setState({
       vm: '',
-      os: '',
-      user: '',
       client: ''
     })
   }
@@ -85,29 +81,18 @@ class App extends Component {
               <div className="select">
                 <select onChange={this.handleChange} name="vm" value={this.state.vm}>
                   <option>Pick a VM</option>
-                  <option>VPN1A</option>
-                  <option>VPN1B</option>
-                  <option>VPN1C</option>
-                  <option>VPN2A</option>
-                  <option>VPN2B</option>
-                  <option>VPN2C</option>
-                  <option>VPN3A</option>
-                  <option>VPN3B</option>
-                  <option>VPN3C</option>
-                  <option>VPN3D</option>
-                  <option>VPN3E</option>
-                  <option>VPN3F</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div className="field">
-            <div className="control">
-              <div className="select">
-                <select onChange={this.handleChange} name="os" value={this.state.os}>
-                  <option>Pick the OS</option>
-                  <option>WINXP</option>
-                  <option>WIN7</option>
+                  <option>VPN1A - WIN7</option>
+                  <option>VPN1B - WINXP</option>
+                  <option>VPN1C - WINXP</option>
+                  <option>VPN2A - WIN7</option>
+                  <option>VPN2B - WIN7</option>
+                  <option>VPN2C - WIN7</option>
+                  <option>VPN3A - WIN7</option>
+                  <option>VPN3B - WINXP</option>
+                  <option>VPN3C - WIN7</option>
+                  <option>VPN3D - WINXP</option>
+                  <option>VPN3E - WIN7</option>
+                  <option>VPN3F - WIN7</option>
                 </select>
               </div>
             </div>
